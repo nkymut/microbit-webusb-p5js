@@ -2,6 +2,14 @@
  * @name WebUSB RGB Control
  * @description This example sends and receives multiple values to micro:bit over WebUSB. 
  *  Using microbit-webusb library. https://github.com/bsiever/microbit-webusb
+ 
+ Setup: 
+ 1. Upgrade Micro:bit to latest firmware (above version 249) 
+** [Updating your micro:bit firmware](https://microbit.org/guide/firmware/)
+
+2. Program the Micro:bit with one of the example programs that generates serial data
+[micro:bit code](https://makecode.microbit.org/_c5iHFsERyPhr)
+
  */
 let connectBtn;
 

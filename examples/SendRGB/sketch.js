@@ -101,7 +101,7 @@ function disconnect() {
 function handleData(data){
   //print(data);
   recvText = "recv: "+ data.data;
-  brightness = int(data.data);
+  
   
 }
 

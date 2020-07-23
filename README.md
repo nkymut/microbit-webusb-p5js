@@ -1,5 +1,5 @@
 # microbit-webusb-p5js
-Example files for interacting with micro:bit and p5.js over WebUSB
+Example files of interaction between micro:bit and p5.js over WebUSB
 
 # References 
 * [bsiever/microbit-webusb](https://github.com/bsiever/microbit-webusb):WebUSB Utils for Micro:bit (( [live DEMO](https://bsiever.github.io/microbit-webusb/)

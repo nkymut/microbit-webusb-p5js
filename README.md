@@ -18,5 +18,7 @@ Example files of interaction between micro:bit and p5.js over WebUSB
 # Examples
 
 ## Control Neopixel
+
 ** [p5*js code](https://editor.p5js.org/didny/sketches/cTFjpyKd)
+
 ** [micro:bit code](https://makecode.microbit.org/_c5iHFsERyPhr)

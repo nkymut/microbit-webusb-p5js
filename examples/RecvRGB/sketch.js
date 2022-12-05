@@ -4,7 +4,9 @@
  *  Using microbit-webusb library. https://github.com/bsiever/microbit-webusb
  */
 let connectBtn;
+let disconnectBtn;
 
+let microBit;
 
 let sliderR;
 let sliderG;
@@ -22,6 +24,18 @@ let B = 0;
 function setup() {
   createCanvas(400, 400);
   
+  microBit = new uBitWebUSB();
+
+  microBit.onConnect(function(){
+    console.log("connected");
+  });
+
+  microBit.onDisconnect(function(){
+    console.log("disconnected");
+  });
+
+  microBit.setUARTCallback(handleData);
+
   //Connect/Disconnect Buttons
   connectBtn = createButton("connect");
   connectBtn.position(20,height-30);
@@ -94,7 +108,7 @@ function disconnect() {
 function handleData(data){
   
   //received data as a text string
-  let recvText = data.data;
+  let recvText = data;
   print(recvText); // "R,G,B"
   
   //split the text into a value array and convert to integer numbers. 

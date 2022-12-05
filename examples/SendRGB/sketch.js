@@ -11,12 +11,12 @@
 [micro:bit code](https://makecode.microbit.org/_c5iHFsERyPhr)
 
  */
+
 let connectBtn;
+let disconnectBtn;
 
-let CONSOLE_LOG = true;
 
-// List of connected devices (a single value could be used if only connecting to one device)
-let connectedDevice;
+let microBit;
 
 let sliderR;
 let sliderG;
@@ -33,10 +33,36 @@ let B = 0;
 
 function setup() {
   createCanvas(400, 400);
+
+  microBit = new uBitWebUSB();
+
+  microBit.onConnect(function(){
+    console.log("connected");
+  });
+
+  microBit.onDisconnect(function(){
+    console.log("disconnected");
+  });
+
+
+  microBit.setUARTCallback(handleData);
+
+
+  // connectBtn = createButton("connect");
+  // connectBtn.position(20,height-30);
+  // connectBtn.mousePressed(connect);
+  // connectBtn.style("width:360px");
+
+
   connectBtn = createButton("connect");
-  connectBtn.position(20,height-30);
+  connectBtn.style("width:200px;height:30px");
   connectBtn.mousePressed(connect);
-  connectBtn.style("width:360px");
+
+  disconnectBtn = createButton("disconnect");
+  disconnectBtn.style("width:200px;height:30px");
+  disconnectBtn.mousePressed(disconnect);
+  
+
   // 
   sliderR = createSlider(0,255);
   sliderR.position(width/2 - 175, 10);
@@ -81,26 +107,28 @@ function sliderInput(){
 function send(data){
   if(connectedDevice != null){
   sendText = "sent: "+data; 
-  uBitSend(connectedDevice,data);
+  microBit.uBitSend(data);
   }else{
     print("device not connected!");
   }
 }
 
+
 function connect() {
-  uBitConnectDevice(uBitEventHandler);
+  microBit.uBitConnectDevice();
 
 }
 
 function disconnect() {
   //connectedDevice.close();
-  uBitDisconnect(connectedDevice);
+  microBit.uBitDisconnect();
 
 }
 
+
 function handleData(data){
   //print(data);
-  recvText = "recv: "+ data.data;
+  recvText = "recv: "+ data;
   
   
 }

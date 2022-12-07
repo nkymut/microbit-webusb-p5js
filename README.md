@@ -29,8 +29,13 @@ Based on the library created by [bsiever/microbit-webusb](https://github.com/bsi
 
   Search for WebUSB devices and connect.
 　<br><br>example:
-  ```javascript
-  connectButton.mousePressed(() => {microBit.connectDevice()});
+  ```js
+  connectButton = createButton("connect");
+  connectButton.mousePressed(
+    function(){
+      microBit.searchDevice();
+    }
+  );
   ```
 
 - `microBit.onConnect(callbackFunction)`
@@ -39,20 +44,24 @@ Based on the library created by [bsiever/microbit-webusb](https://github.com/bsi
 
   example:
   ```js
-  microBit.onConnect(function(){
-    console.log("connected");
-  });
+  microBit.onConnect(
+    function(){
+      console.log("connected");
+    }
+  );
   ```
 
 - `microBit.onDisconnect(callbackFunction)`
 
   Register a callback function invoked when the microBit disconnects
-
+ 
   example:
   ```js
-  microBit.onDisconnect(function(){
-    console.log("disconnected");
-  });
+  microBit.onDisconnect(
+    function(){
+      console.log("disconnected");
+    }
+  );
   ```
 
   - `microBit.setReceiveUARTCallback(callbackFunction)`
@@ -61,10 +70,12 @@ Based on the library created by [bsiever/microbit-webusb](https://github.com/bsi
 
   example:
   ```js
-  microBit.setReceiveUARTCallback(function(data){
-    console.log("UART received",data);
-    receivedText = data;
-  });
+  microBit.setReceiveUARTCallback(
+    function(data){
+      console.log("UART received",data);
+      receivedText = data;
+    }
+  );
   ```
 
 - `microBit.writeUARTData(text)`

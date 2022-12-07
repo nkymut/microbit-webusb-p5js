@@ -228,7 +228,7 @@ class uBitWebUSB {
      * Disconnect from a device 
      * @param {USBDevice} device to disconnect from 
      */
-    uBitDisconnect() {
+    disconnectDevice() {
         if(this.device && this.device.opened) {
             this.device.close()
         }
@@ -260,7 +260,7 @@ class uBitWebUSB {
      * 
      * @param {uBitEventCallback} callback function for device events
      */
-    uBitConnectDevice() { 
+    connectDevice() { 
         navigator.usb.requestDevice({filters: [{ vendorId: MICROBIT_VENDOR_ID, productId: 0x0204 }]})
             .then(  d => { if(!d.opened){
                 // console.log("Connected To Device ", this.device);

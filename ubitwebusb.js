@@ -62,7 +62,7 @@ class uBitWebUSB {
 
 
 
-    setUARTCallback(callbackFunction){
+    setReceiveUARTCallback(callbackFunction){
         console.log("UART callback set")
         this.onReceiveUARTCallback = callbackFunction;
     }
@@ -227,7 +227,7 @@ class uBitWebUSB {
     /**
      * Disconnect from a device 
      */
-    uBitDisconnect() {
+    disconnectDevice() {
         if(this.device && this.device.opened) {
             this.device.close()
         }
@@ -253,7 +253,12 @@ class uBitWebUSB {
         this.device.controlTransferOut(DAPOutReportRequest, message) // DAP ID_DAP_Vendor3: https://github.com/ARMmbed/DAPLink/blob/0711f11391de54b13dc8a628c80617ca5d25f070/source/daplink/cmsis-dap/DAP_vendor.c
     }
 
-    writeData(data){
+    /**
+     * Send a string to a specific device, an alias of uBitSend(data)
+     * for compativility with ubitwebble.js
+     * @param {string} data to send (must not include newlines)
+     */
+    writeUARTData(data){
         this.uBitSend(data);
     }
 
@@ -262,7 +267,7 @@ class uBitWebUSB {
      * 
      * @param {uBitEventCallback} callback function for device events
      */
-    uBitConnectDevice() { 
+    connectDevice() { 
         navigator.usb.requestDevice({filters: [{ vendorId: MICROBIT_VENDOR_ID, productId: 0x0204 }]})
             .then(  d => { if(!d.opened){
                 // console.log("Connected To Device ", this.device);

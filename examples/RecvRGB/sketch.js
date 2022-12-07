@@ -95,13 +95,13 @@ function send(data){
 }
 
 function connect() {
-  uBitConnectDevice(uBitEventHandler);
+  connectDevice(uBitEventHandler);
 
 }
 
 function disconnect() {
   //connectedDevice.close();
-  uBitDisconnect(connectedDevice);
+  disconnectDevice(connectedDevice);
 
 }
 

@@ -72,20 +72,20 @@ function handleData(status) {
 
 function sayHello(){
   messageText = "Hello!";
-  microBit.writeData(messageText);
+  microBit.writeUARTData(messageText);
   print("send:"+messageText);  
 }
 
 function sayBye(){
   messageText = "Bye!";
-  microBit.writeData(messageText);
+  microBit.writeUARTData(messageText);
   print("send:"+messageText);  
 
 }
 
 function keyPressed(){
   messageText = key;
-  microBit.writeData(messageText);
+  microBit.writeUARTData(messageText);
 
   print("send:"+messageText);  
 }

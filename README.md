@@ -1,10 +1,10 @@
 # microbit-webusb-p5js
+A javascript library to interact with [BBC micro:bit](http://microbit.org/) using web usb API.
+
 Example files of interaction between micro:bit and p5.js over WebUSB
 
-# References 
-* [bsiever/microbit-webusb](https://github.com/bsiever/microbit-webusb):WebUSB Utils for Micro:bit (( [live DEMO](https://bsiever.github.io/microbit-webusb/)
-* [micro:bit](https://microbit.org/)
-* [p5*js](https://p5js.org/)
+Based on the library created by [bsiever/microbit-webusb](https://github.com/bsiever/microbit-webusb) and updated to provide the same class interface for UART properties as [nkymut/microbit-webble-p5js](https://github.com/nkymut/microbit-webble-p5js) and enabled easy transition from WebUSB to WebBluetooth interoperability.
+
 
 # Setup
 
@@ -22,3 +22,10 @@ Example files of interaction between micro:bit and p5.js over WebUSB
 ** [p5*js code](https://editor.p5js.org/didny/sketches/cTFjpyKd)
 
 ** [micro:bit code](https://makecode.microbit.org/_c5iHFsERyPhr)
+
+
+# References 
+* [bsiever/microbit-webusb](https://github.com/bsiever/microbit-webusb):WebUSB Utils for Micro:bit (( [live DEMO](https://bsiever.github.io/microbit-webusb/)
+* [micro:bit](https://microbit.org/)
+* [p5*js](https://p5js.org/)
+

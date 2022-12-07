@@ -115,13 +115,13 @@ function send(data){
 
 
 function connect() {
-  microBit.uBitConnectDevice();
+  microBit.connectDevice();
 
 }
 
 function disconnect() {
   //connectedDevice.close();
-  microBit.uBitDisconnect();
+  microBit.disconnectDevice();
 
 }
 

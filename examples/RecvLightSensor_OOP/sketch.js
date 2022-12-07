@@ -53,13 +53,13 @@ function draw() {
 }
 
 function connect() {
-  microBit.uBitConnectDevice();
+  microBit.connectDevice();
 
 }
 
 function disconnect() {
   //connectedDevice.close();
-  microBit.uBitDisconnect();
+  microBit.disconnectDevice();
 
 }
 

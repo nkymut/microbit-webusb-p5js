@@ -57,7 +57,14 @@ function setup() {
     console.log("disconnected");
   });
 
-  microBit.setUARTCallback(handleData);
+  microBit.setReceiveUARTCallback(function(receivedData){
+    let val = int(receivedData);
+    bulb.brightness = val;
+    
+    fadeSlider.value(bulb.brightness);
+  });
+
+  // microBit.setReceiveUARTCallback(handleData);
 
   //add connect button
   connectBtn = createButton("connect");
@@ -113,13 +120,13 @@ function fade(){
 
 //connect to microBit
 function connect() {
-  microBit.uBitConnectDevice();
+  microBit.connectDevice();
 }
 
 //disconnect from microBit
 
 function disconnect() {
-  microBit.uBitDisconnect();
+  microBit.disconnectDevice();
 }
 
 

@@ -179,7 +179,7 @@ function uBitOpenDevice(device, callback) {
  * Disconnect from a device 
  * @param {USBDevice} device to disconnect from 
  */
-function uBitDisconnect(device) {
+function disconnectDevice(device) {
     if(device && device.opened) {
         device.close()
     }
@@ -232,7 +232,7 @@ function uBitSend(device, data) {
  * 
  * @param {uBitEventCallback} callback function for device events
  */
-function uBitConnectDevice(callback) { 
+function connectDevice(callback) { 
     navigator.usb.requestDevice({filters: [{ vendorId: MICROBIT_VENDOR_ID, productId: 0x0204 }]})
         .then(  d => { if(!d.opened) uBitOpenDevice(d, callback)} )
         .catch( () => callback("connection failure", null, null))

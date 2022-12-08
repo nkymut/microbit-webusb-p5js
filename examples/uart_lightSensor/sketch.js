@@ -16,8 +16,8 @@
 //The Bulb object
 let bulb = {
   brightness: 0,
-  bulbOn: "",
-  bulbOff: "",
+  bulbOnImage: "",
+  bulbOffImage: "",
   on: function() {
     this.brightness = 255;
   },
@@ -26,13 +26,13 @@ let bulb = {
   },
   draw: function(xPos, yPos, width, height) {
     if (this.brightness > 0) {
-      //show bulbOn image
+      //show bulbOnImage
       tint(this.brightness);
-      image(this.bulbOn, xPos, yPos, width, height);
+      image(this.bulbOnImage, xPos, yPos, width, height);
     } else {
-      //shoe bulbOff image
+      //shoe bulbOffImage
       tint(255);
-      image(this.bulbOff, xPos, yPos, width, height);
+      image(this.bulbOffImage, xPos, yPos, width, height);
     }
   }
 }
@@ -74,9 +74,9 @@ function setup() {
   disconnectBtn.mousePressed(disconnect);
   
 
-  //add bulbOn/bulbOff images as properties
-  bulb.bulbOn = loadImage("images/bulb_on.png");
-  bulb.bulbOff = loadImage("images/bulb_off.png");
+  //add bulbOnImage/bulbOffImages as properties
+  bulb.bulbOnImage = loadImage("images/bulb_on.png");
+  bulb.bulbOffImage = loadImage("images/bulb_off.png");
 
   //set default brightness  
   bulb.brightness = 0;

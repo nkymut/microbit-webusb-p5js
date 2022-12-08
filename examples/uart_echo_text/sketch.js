@@ -31,7 +31,7 @@ function setup() {
     console.log("disconnected");
   });
 
-  microBit.setUARTCallback(handleData);
+  microBit.setReceiveUARTCallback(handleData);
   
   //define connect and disconnect buttons
   const connectButton = createButton("Connect");

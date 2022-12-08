@@ -45,7 +45,7 @@ function setup() {
   });
 
 
-  microBit.setUARTCallback(handleData);
+  microBit.setReceiveUARTCallback(handleData);
 
 
   // connectBtn = createButton("connect");

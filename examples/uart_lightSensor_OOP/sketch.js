@@ -19,7 +19,7 @@ function setup() {
     console.log("disconnected");
   });
 
-  // microBit.setUARTCallback(function(data){
+  // microBit.setReceiveUARTCallback(function(data){
   //   console.log("UART received",data);
   //   receivedText = data;
   //   print(bulb);
@@ -27,7 +27,7 @@ function setup() {
   // });
 
 
-  microBit.setUARTCallback(handleData);
+  microBit.setReceiveUARTCallback(handleData);
 
   connectBtn = createButton("connect");
   connectBtn.style("width:200px;height:30px");

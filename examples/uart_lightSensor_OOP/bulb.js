@@ -1,8 +1,8 @@
 /* Bulb Class
 
 properties:
-- bulbOnImg : an image when bulb is on
-- bulbOffImg : an image when bulb is off
+- bulbOnImageImg : an image when bulb is on
+- bulbOffImageImg : an image when bulb is off
 - brightness: brightness of the bulb 0:off 255:max brightness
 
 methods:
@@ -16,8 +16,8 @@ methods:
 class Bulb { 
   constructor(onImageFile, offImageFile) {
     // properties to store images to show bulb statuses
-    this.bulbOn = loadImage(onImageFile);
-    this.bulbOff = loadImage(offImageFile);
+    this.bulbOnImage = loadImage(onImageFile);
+    this.bulbOffImage = loadImage(offImageFile);
     // properties to store brightness of the bulb
     this.brightness = 0;
   }
@@ -27,13 +27,13 @@ class Bulb {
     
   
     if (this.brightness > 0) {
-      //show bulbOn image
+      //show bulbOnImage
       tint(this.brightness);
-      image(this.bulbOn, xPos, yPos, width, height);
+      image(this.bulbOnImage, xPos, yPos, width, height);
     } else {
-      //shoe bulbOff image
+      //shoe bulbOffImage
       tint(255);
-      image(this.bulbOff, xPos, yPos, width, height);
+      image(this.bulbOffImage, xPos, yPos, width, height);
     }
 
   }

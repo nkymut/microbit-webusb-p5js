@@ -91,20 +91,6 @@ Based on the library created by [bsiever/microbit-webusb](https://github.com/bsi
 ## Examples
 Check the examples folder for working examples.
 
-### Basic example
-Connect your microbit to a webpage, visualize the data and change the animations on the led matrix.
-
-[micro:bit code](https://makecode.microbit.org/61779-39134-92711-11083)
-
-[Try it here](https://nkymut.github.io/microbit-webble-p5js/examples/basic/)
-
-![web ble demo](assets/html.gif)
-
-
-
-
-
-
 ### UART Echo example
 Learn how to exchange text messages between the microbit and a [p5.js](https://p5js.org/) sketch via UART, update microBit's LED message from the sketch.
 
@@ -117,16 +103,15 @@ Learn how to exchange text messages between the microbit and a [p5.js](https://p
 Learn how to receive lightsensor value from the microbit and update a [p5.js](https://p5js.org/) sketch via UART.
 
 
-[micro:bit code](https://makecode.microbit.org/_F8DFrygkTRP1) for micro:bit v2
+[micro:bit code](https://makecode.microbit.org/_c7AV2KYY6YH9)
 
-[micro:bit code](https://nkymut.github.io/microbit-webble-p5js/examples/uart_lightsensor/microbit_code/microbit-LightSensorBLEUARTv01.hex) for micro:bit v1
 
 [Try it here](https://nkymut.github.io/microbit-webusb-p5js/examples/uart_lightsensor/)
 
 
-
-## Neopixel Control example
+### Neopixel Control example
 Learn how to control the color of Neopixel LED connected to micro:bit from [p5.js](https://p5js.org/) sketch via UART.
+
 [micro:bit code](https://makecode.microbit.org/_c5iHFsERyPhr)
 
 [Try it here](https://nkymut.github.io/microbit-webusb-p5js/examples/neopixel_RGB/)

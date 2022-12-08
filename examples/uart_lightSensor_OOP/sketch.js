@@ -1,3 +1,19 @@
+
+/*
+ * @name WebUSB Control bulb object with lightsensor value (OOP version)
+ * @description This example receives lightsensor value from micro:bit over WebUSB. 
+ *  Using microbit-webusb library. https://github.com/bsiever/microbit-webusb
+ 
+ Setup: 
+ 1. Upgrade Micro:bit to latest firmware (above version 249) 
+    [Updating your micro:bit firmware](https://microbit.org/guide/firmware/)
+
+ 2. Program the Micro:bit with one of the example programs that generates serial data
+[micro:bit code](https://makecode.microbit.org/_c5iHFsERyPhr)
+
+ */
+
+
 //The Bulb object
 let bulb;
 

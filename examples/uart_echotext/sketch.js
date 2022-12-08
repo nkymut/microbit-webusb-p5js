@@ -1,8 +1,7 @@
-/* micro:bit -> p5*js BLE communication example. 
-   Control video playback with microbit gesture input.
+/* micro:bit -> p5*js WebUSB communication example. 
+    This example uses the WebUSB API to connect to a micro:bit and send/receive data.
 
-micro:bit code: https://makecode.microbit.org/_HwxMh9Fcgcxy
-
+micro:bit code: https://makecode.microbit.org/_aC4Aqfa1V49X
 */
 
 

@@ -64,6 +64,8 @@ Based on the library created by [bsiever/microbit-webusb](https://github.com/bsi
   );
   ```
 
+  - `microBit.onReceiveUART(callbackFunction)`
+  - `microBit.onReceiveSerial(callbackFunction)`
   - `microBit.setReceiveUARTCallback(callbackFunction)`
 
   Register a callback function to be invoked when UART data is received.

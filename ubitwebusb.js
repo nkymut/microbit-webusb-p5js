@@ -60,10 +60,15 @@ class uBitWebUSB {
 
     }
 
+    onReceiveUART(callbackFunction){
+        this.onReceiveUARTCallback = callbackFunction;
+    }
 
+    onReceiveSerial(callbackFunction){
+        this.onReceiveUART(callbackFunction);
+    }
 
     setReceiveUARTCallback(callbackFunction){
-        console.log("UART callback set")
         this.onReceiveUARTCallback = callbackFunction;
     }
     

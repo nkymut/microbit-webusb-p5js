@@ -80,14 +80,25 @@ Based on the library created by [bsiever/microbit-webusb](https://github.com/bsi
   );
   ```
 
-- `microBit.writeUARTData(text)`
+- `microBit.writeUARTData(string)`
   
-  Send text message to microbit via UART.
+  Send text line to microbit via UART.
 
   example:
   ```js
   var messageText = "Hello!";
   microBit.writeUARTData(messageText);
+  ```
+
+- `microBit.sendSerial(string)`
+  
+  Send text line to microbit via UART.
+  an alias of writeUARTData()
+
+  example:
+  ```js
+  var messageText = "Hello!";
+  microBit.sendSerial(messageText);
   ```
 
 ## Examples

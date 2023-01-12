@@ -267,6 +267,10 @@ class uBitWebUSB {
         this.uBitSend(data);
     }
 
+    sendSerial(data){
+        this.uBitSend(data);
+    }
+
     /**
      * Allow users to select a device to connect to.
      * 

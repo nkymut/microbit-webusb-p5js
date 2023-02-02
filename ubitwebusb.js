@@ -234,7 +234,8 @@ class uBitWebUSB {
      */
     disconnectDevice() {
         if(this.device && this.device.opened) {
-            this.device.close()
+            this.device.close();
+            this.connected = false;
         }
     }
 
@@ -255,7 +256,7 @@ class uBitWebUSB {
         message[0] = 0x84
         message[1] = encoded.length
         message.set(encoded, 2)
-        this.device.controlTransferOut(DAPOutReportRequest, message) // DAP ID_DAP_Vendor3: https://github.com/ARMmbed/DAPLink/blob/0711f11391de54b13dc8a628c80617ca5d25f070/source/daplink/cmsis-dap/DAP_vendor.c
+        this.device.controlTransferOut(this.DAPOutReportRequest, message) // DAP ID_DAP_Vendor3: https://github.com/ARMmbed/DAPLink/blob/0711f11391de54b13dc8a628c80617ca5d25f070/source/daplink/cmsis-dap/DAP_vendor.c
     }
 
     /**
@@ -282,6 +283,7 @@ class uBitWebUSB {
                 // console.log("Connected To Device ", this.device);
                 this.device = d;
                 this.uBitOpenDevice();
+                this.connected = true;
 
             } }).catch( () => this.uBitEventHandler("connection failure", null, null))
     }

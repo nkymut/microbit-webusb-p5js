@@ -223,11 +223,11 @@ async uBitDisconnect() {
  * @param {USBDevice} device 
  * @param {string} data to send (must not include newlines)
  */
- uBitSend(device, data) {
-    if(!device.opened)
+ uBitSend(data) {
+    if(!this.device.opened)
         return
     let fullLine = data+'\n'
-    device.target.serialWrite(fullLine)
+    this.device.target.serialWrite(fullLine)
 }
 
 
